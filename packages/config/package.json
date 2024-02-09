@@ -1,11 +1,11 @@
 {
-  "name": "@repo/eslint-config",
-  "version": "0.0.0",
+  "name": "@bacaxnot/config",
+  "version": "1.0.0",
+  "description": "Shared configuration for the bacaxnot web ecosystem",
   "private": true,
   "files": [
-    "library.js",
-    "next.js",
-    "react-internal.js"
+    "eslint/*",
+    "typescript/*"
   ],
   "devDependencies": {
     "@vercel/style-guide": "^5.1.0",
