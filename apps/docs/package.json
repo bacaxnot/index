@@ -16,7 +16,8 @@
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^14.0.4",
-    "@bacaxnot/config": "workspace:*",
+    "@bacaxnot/tsconfig": "workspace:*",
+    "@bacaxnot/eslint-config": "workspace:*",
     "@types/eslint": "^8.56.1",
     "@types/node": "^20.10.6",
     "@types/react": "^18.2.46",

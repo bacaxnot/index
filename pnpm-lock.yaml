@@ -8,9 +8,12 @@ importers:
 
   .:
     devDependencies:
-      '@bacaxnot/config':
+      '@bacaxnot/eslint-config':
         specifier: workspace:*
-        version: link:packages/config
+        version: link:standards/eslint
+      '@bacaxnot/tsconfig':
+        specifier: workspace:*
+        version: link:standards/typescript
       prettier:
         specifier: ^3.1.1
         version: 3.1.1
@@ -33,9 +36,12 @@ importers:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
     devDependencies:
-      '@bacaxnot/config':
+      '@bacaxnot/eslint-config':
         specifier: workspace:*
-        version: link:../../packages/config
+        version: link:../../standards/eslint
+      '@bacaxnot/tsconfig':
+        specifier: workspace:*
+        version: link:../../standards/typescript
       '@next/eslint-plugin-next':
         specifier: ^14.0.4
         version: 14.0.4
@@ -73,9 +79,12 @@ importers:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
     devDependencies:
-      '@bacaxnot/config':
+      '@bacaxnot/eslint-config':
         specifier: workspace:*
-        version: link:../../packages/config
+        version: link:../../standards/eslint
+      '@bacaxnot/tsconfig':
+        specifier: workspace:*
+        version: link:../../standards/typescript
       '@next/eslint-plugin-next':
         specifier: ^14.0.4
         version: 14.0.4
@@ -98,35 +107,14 @@ importers:
         specifier: ^5.3.3
         version: 5.3.3
 
-  packages/config:
-    devDependencies:
-      '@typescript-eslint/eslint-plugin':
-        specifier: ^6.17.0
-        version: 6.17.0(@typescript-eslint/parser@6.17.0)(eslint@8.56.0)(typescript@5.3.3)
-      '@typescript-eslint/parser':
-        specifier: ^6.17.0
-        version: 6.17.0(eslint@8.56.0)(typescript@5.3.3)
-      '@vercel/style-guide':
-        specifier: ^5.1.0
-        version: 5.1.0(eslint@8.56.0)(prettier@3.1.1)(typescript@5.3.3)
-      eslint-config-prettier:
-        specifier: ^9.1.0
-        version: 9.1.0(eslint@8.56.0)
-      eslint-config-turbo:
-        specifier: ^1.11.3
-        version: 1.11.3(eslint@8.56.0)
-      eslint-plugin-only-warn:
-        specifier: ^1.1.0
-        version: 1.1.0
-      typescript:
-        specifier: ^5.3.3
-        version: 5.3.3
-
   packages/ui:
     devDependencies:
-      '@bacaxnot/config':
+      '@bacaxnot/eslint-config':
         specifier: workspace:*
-        version: link:../config
+        version: link:../../standards/eslint
+      '@bacaxnot/tsconfig':
+        specifier: workspace:*
+        version: link:../../standards/typescript
       '@turbo/gen':
         specifier: ^1.11.3
         version: 1.11.3(@types/node@20.10.6)(typescript@5.3.3)
@@ -151,6 +139,32 @@ importers:
       typescript:
         specifier: ^5.3.3
         version: 5.3.3
+
+  standards/eslint:
+    devDependencies:
+      '@typescript-eslint/eslint-plugin':
+        specifier: ^6.17.0
+        version: 6.17.0(@typescript-eslint/parser@6.17.0)(eslint@8.56.0)(typescript@5.3.3)
+      '@typescript-eslint/parser':
+        specifier: ^6.17.0
+        version: 6.17.0(eslint@8.56.0)(typescript@5.3.3)
+      '@vercel/style-guide':
+        specifier: ^5.1.0
+        version: 5.1.0(eslint@8.56.0)(prettier@3.1.1)(typescript@5.3.3)
+      eslint-config-prettier:
+        specifier: ^9.1.0
+        version: 9.1.0(eslint@8.56.0)
+      eslint-config-turbo:
+        specifier: ^1.11.3
+        version: 1.11.3(eslint@8.56.0)
+      eslint-plugin-only-warn:
+        specifier: ^1.1.0
+        version: 1.1.0
+      typescript:
+        specifier: ^5.3.3
+        version: 5.3.3
+
+  standards/typescript: {}
 
 packages:
 

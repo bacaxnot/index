@@ -1,12 +1,8 @@
 {
-  "name": "@bacaxnot/config",
+  "name": "@bacaxnot/eslint-config",
   "version": "1.0.0",
-  "description": "Shared configuration for the bacaxnot web ecosystem",
+  "description": "Shared configuration for ESLint",
   "private": true,
-  "files": [
-    "eslint/*",
-    "typescript/*"
-  ],
   "devDependencies": {
     "@vercel/style-guide": "^5.1.0",
     "eslint-config-turbo": "^1.11.3",

@@ -1,5 +1,5 @@
 {
-  "extends": "@bacaxnot/config/typescript/react-library.json",
+  "extends": "@bacaxnot/tsconfig/react-library",
   "compilerOptions": {
     "outDir": "dist"
   },

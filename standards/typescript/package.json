@@ -1,0 +1,9 @@
+{
+  "name": "@bacaxnot/tsconfig",
+  "version": "1.0.0",
+  "description": "Shared configuration for the bacaxnot TypeScript projects",
+  "private": true,
+  "publishConfig": {
+    "access": "public"
+  }
+}
