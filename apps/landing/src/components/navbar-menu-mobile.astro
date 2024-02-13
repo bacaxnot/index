@@ -1,0 +1,40 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+import NavbarLink from './navbar-link.astro'
+
+interface Props extends HTMLAttributes<'div'> {
+	links: {
+		href: string
+		label: string
+	}[]
+}
+
+const { links, class: className, ...props } = Astro.props
+
+const toggleStyles = 'cursor-pointer border border-transparent px-1  transition-transform'
+const menuStyles =
+	'absolute left-0 right-0 -z-10 flex -translate-y-full justify-end gap-1.5 bg-black px-page py-3 transition-transform @md:hidden'
+---
+
+<>
+	<div class:list={[toggleStyles, className]} {...props} id="burger-toggle">...</div>
+	<ul class={menuStyles} id="burger-toggle-menu">
+		{
+			links.map((link) => {
+				return <NavbarLink href={link.href}>{link.label}</NavbarLink>
+			})
+		}
+	</ul>
+</>
+
+<script>
+	const toggle = document.getElementById('burger-toggle')!
+	const menu = document.getElementById('burger-toggle-menu')!
+
+	toggle.addEventListener('click', () => {
+		toggle.classList.toggle('rotate-90')
+
+		const menuClasses = ['translate-y-0', 'shadow-bottom', 'shadow-white']
+		menuClasses.forEach((style) => menu.classList.toggle(style))
+	})
+</script>

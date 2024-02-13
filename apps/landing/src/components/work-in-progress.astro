@@ -1,0 +1,15 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+import '@/styles/animations.css'
+
+type Props = HTMLAttributes<'p'>
+
+const { class: clasName, ...props } = Astro.props
+
+const styles = 'flex flex-col items-center justify-center break-words text-6xl'
+---
+
+<p class:list={[styles, clasName]} {...props}>
+	<span>work in</span>
+	<span class="with-caret blinking">progress</span>
+</p>

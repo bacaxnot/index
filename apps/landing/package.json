@@ -1,0 +1,33 @@
+{
+  "name": "@bacaxnot/landing",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "lint": "prettier --write  \"**/*.{js,jsx,ts,tsx,md,mdx,astro}\""
+  },
+  "dependencies": {
+    "@astrojs/react": "^3.0.10",
+    "@bacaxnot/helpers": "workspace:*",
+    "@fontsource-variable/roboto-mono": "^5.0.17",
+    "astro": "^4.3.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.5.2",
+    "@astrojs/tailwind": "^5.1.0",
+    "@tailwindcss/container-queries": "^0.1.1",
+    "@types/react": "^18.2.55",
+    "@types/react-dom": "^18.2.19",
+    "prettier": "^3.1.1",
+    "prettier-plugin-astro": "^0.13.0",
+    "prettier-plugin-tailwindcss": "^0.5.11",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.3.3"
+  }
+}

@@ -1,0 +1,25 @@
+---
+import '@fontsource-variable/roboto-mono'
+import { cn } from '@bacaxnot/helpers/tailwind'
+
+interface Props {
+	title: string
+}
+const { title } = Astro.props
+
+const styles =
+	'grid min-h-[100dvh] grid-rows-[auto,1fr] bg-black font-mono text-white [color-scheme:dark]'
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body class={styles}>
+		<slot />
+	</body>
+</html>

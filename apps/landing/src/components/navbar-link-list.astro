@@ -1,0 +1,20 @@
+---
+import NavbarLink from './navbar-link.astro'
+import type { HTMLAttributes } from 'astro/types'
+
+interface Props extends HTMLAttributes<'ul'> {
+	links: {
+		href: string
+		label: string
+	}[]
+}
+const { links, ...props } = Astro.props
+---
+
+<ul {...props}>
+	{
+		links.map((link) => {
+			return <NavbarLink href={link.href}>{link.label}</NavbarLink>
+		})
+	}
+</ul>

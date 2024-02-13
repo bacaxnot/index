@@ -1,0 +1,41 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+import NavbarLinkList from './navbar-link-list.astro'
+import NavbarMobileMenu from './navbar-menu-mobile.astro'
+
+interface Props extends HTMLAttributes<'nav'> {}
+
+const { class: className, ...props } = Astro.props
+
+const navStyles = 'navbar sticky top-0 z-50 grid bg-black bg-clip-border py-2 @container/navbar'
+
+const routes = [
+	{
+		href: '/blog',
+		label: 'blog',
+		active: true
+	},
+	{
+		href: '/thoughts',
+		label: 'thoughts',
+		active: false
+	},
+	{
+		href: '/quien',
+		label: 'quien',
+		active: true
+	}
+]
+
+const links = routes.filter((route) => route.active)
+---
+
+<header class:list={[navStyles, className]} {...props}>
+	<nav class="flex items-end justify-between bg-inherit">
+		<a href="/" class="border border-transparent text-3xl hover:underline"> bacaxnot </a>
+		<section>
+			<NavbarMobileMenu links={links} class="@md/navbar:hidden" />
+			<NavbarLinkList links={links} class="hidden gap-2 @md:flex" />
+		</section>
+	</nav>
+</header>

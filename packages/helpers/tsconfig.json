@@ -1,0 +1,6 @@
+{
+  "extends": "@bacaxnot/tsconfig/base",
+  "exclude": [
+    "node_modules"
+  ]
+}

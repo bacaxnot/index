@@ -1,0 +1,21 @@
+.with-caret {
+	display: flex;
+	align-items: center;
+	gap: 0.1em;
+}
+.with-caret::after {
+	content: '';
+	width: 0.12em;
+	height: 1em;
+	background: white;
+	display: inline-block;
+}
+.with-caret.blinking::after {
+	animation: cursor-blink 1s steps(2) infinite;
+}
+
+@keyframes cursor-blink {
+	0% {
+		opacity: 0;
+	}
+}
