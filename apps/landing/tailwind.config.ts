@@ -13,7 +13,7 @@ const config: Config = {
 				'with-caret': '1.2em'
 			},
 			width: {
-				page: 'min(100%,56rem);'
+				page: 'min(100%,112rem);'
 			},
 			padding: {
 				page: '1rem'

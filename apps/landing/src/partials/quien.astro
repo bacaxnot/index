@@ -1,0 +1,40 @@
+---
+import { Typewriter } from '@/components/typewriter.tsx'
+import Disclaimer from '@/components/disclaimer.astro'
+
+interface Props {
+	class?: string
+}
+const { class: className } = Astro.props
+
+const avatarURL =
+	'https://ehgwwzsrzlymozphrlyk.supabase.co/storage/v1/object/public/images/users/bacaxnot-2.png'
+---
+
+<article class:list={['mt-3 grid gap-8 @container', className]}>
+	<Typewriter
+		entries={['¿quién le pregunt', '¿quién soy...?']}
+		className="text-3xl"
+		client:visible
+	/>
+	<section class="grid gap-10 @2xl:grid-cols-[1fr,min-content]">
+		<p class="basis-80 text-right">
+			es una excelente pregunta, me la hago con frecuencia... espero tener la respuesta antes de
+			morir [música dramática de fondo]. por el momento, puedo hablar de lo que socialmente me
+			identifica: un apasionado por la tecnología que, por alguna extraña razón estudió ingeniería
+			civil y ahora se dedica a tratar de transformar la realidad latinoamericana con sinfonías de
+			código binario (#elpoeta), y en el proceso, quizá, entender el maravilloso sinsentido de
+			existir. un ingeniero {"civiln't"} amante de la inteligencia artificial, blockchain y la belleza
+			inesperada de la realidad.
+		</p>
+		<div class="grid justify-items-center gap-2">
+			<div class="relative h-[300px] w-[300px]">
+				<img src={avatarURL} sizes="300px" alt="bacaxnot" class="object-contain" />
+			</div>
+			<Disclaimer>
+				claramente no soy yo, yo soy más atractivo; es un avatar creado con i.a. próximamente: un
+				modelo tridimensional que narre este párrafo mientras se pierden en mi profunda mirada.
+			</Disclaimer>
+		</div>
+	</section>
+</article>
