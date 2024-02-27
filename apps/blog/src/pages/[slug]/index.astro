@@ -1,0 +1,23 @@
+---
+import { supabaseClient } from '@/lib/supabase/client'
+
+export const prerender = false
+
+const supabase = supabaseClient({ env: 'server', cookies: Astro.cookies })
+const { data: posts, error } = await supabase.from('posts').select('*, user:users(*)')
+
+if (posts == null) return Astro.redirect('/404')
+const { slug } = Astro.props
+console.log(`slug: ${slug}`)
+
+const post = posts.find((post) => post.slug === slug)
+console.log(post)
+if (post == undefined) return Astro.redirect('/404')
+
+const { title, content } = post
+---
+
+<p>
+	<h1>{title}</h1>
+	<div>{content}</div>
+</p>

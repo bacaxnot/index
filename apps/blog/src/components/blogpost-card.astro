@@ -1,0 +1,37 @@
+---
+import { Image } from 'astro:assets'
+import UsernameTag from '@/components/username-tag.astro'
+import { contentExcerpt, dateFormatter } from '@/lib/helpers'
+import type { BlogPost } from '@/lib/schemas'
+
+interface Props {
+	post: BlogPost
+	class?: string
+}
+
+const { post, class: className } = Astro.props
+
+const { slug, title, content, image_url, created_at, user } = post
+const username = user?.username ?? 'anonimo'
+const href = `/${slug}`
+---
+
+<div class:list={['@container/blogpostcard', className]}>
+	<article class="grid gap-4 @3xl:grid-cols-[1.5fr,_1fr]">
+		<a href={href} class="relative block h-[200px] w-full @3xl/:h-[260px]">
+			<Image src={image_url} alt={title} inferSize class="h-full w-full object-cover" />
+		</a>
+		<section class="flex flex-col items-start justify-between gap-3">
+			<a href={href}>
+				<h2>{title}</h2>
+			</a>
+			<a href={href}>
+				<p>{contentExcerpt(content) + '...'}</p>
+			</a>
+			<span class="flex w-full justify-between">
+				<UsernameTag username={username} />
+				<span>{dateFormatter(created_at)}</span>
+			</span>
+		</section>
+	</article>
+</div>

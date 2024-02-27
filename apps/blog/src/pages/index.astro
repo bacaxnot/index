@@ -1,25 +1,34 @@
 ---
+import BlogpostCard from '@/components/blogpost-card.astro'
 import Disclaimer from '@/components/disclaimer.astro'
 import Base from '@/layouts/base.astro'
+import { supabaseClient } from '@/lib/supabase/client'
+
+const supabase = supabaseClient({ env: 'server', cookies: Astro.cookies })
+const { data: posts, error } = await supabase.from('posts').select('*, user:users(*)')
+
+if (error) {
+	console.error(error)
+}
 ---
 
 <Base title={'blog/bacaxnot'}>
-	<section class="@container z-0 grid gap-6">
+	<section class="z-0 grid gap-6 @container">
 		<Disclaimer>
 			este blog solo pretende compartir ideas que tengo mientras exploro este maravilloso y
 			aterrador misterio llamado existencia. si te gusta, ps bien; si no, ps también. besos
 			cibernéticos para tod@s.
 		</Disclaimer>
-		<ul class="@2xl:grid-cols-2 grid gap-x-8 gap-y-16">
-			<!-- {
+		<ul class="grid gap-x-8 gap-y-16 @2xl:grid-cols-2 @5xl:grid-cols-3">
+			{
 				posts?.map((post, index) =>
 					index === 0 ? (
-						<BlogPostCard key={post.id} post={post} class="@2xl:col-span-2" />
+						<BlogpostCard post={post} class="@2xl:col-span-2 @5xl:col-span-1" />
 					) : (
-						<BlogPostCard key={post.id} post={post} />
+						<BlogpostCard post={post} />
 					)
 				)
-			} -->
+			}
 		</ul>
 	</section>
 </Base>

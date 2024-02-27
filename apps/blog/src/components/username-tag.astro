@@ -1,0 +1,11 @@
+---
+interface Props {
+	username: string
+}
+
+const { username } = Astro.props
+---
+
+<a href={`https://instagram.com/${username}`} class="hover:text-yellow-300 hover:underline">
+	{`@${username}`}
+</a>

@@ -1,11 +1,21 @@
-import { defineConfig } from "astro/config";
-import mdx from "@astrojs/mdx";
-import sitemap from "@astrojs/sitemap";
+import { defineConfig } from 'astro/config'
 
-import tailwind from "@astrojs/tailwind";
+import tailwind from '@astrojs/tailwind'
+import vercel from '@astrojs/vercel/serverless'
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://blog.bacaxnot.com",
-  integrations: [mdx(), sitemap(), tailwind()]
-});
+	output: 'hybrid',
+	site: 'https://blog.bacaxnot.com',
+	image: {
+		remotePatterns: [
+			{
+				protocol: 'https',
+				hostname: 'ehgwwzsrzlymozphrlyk.supabase.co',
+				port: '',
+				pathname: '/storage/v1/object/public/images/**'
+			}
+		]
+	},
+	integrations: [tailwind(), vercel()]
+})
