@@ -1,5 +1,5 @@
 ---
-import BlogpostCard from '@/components/blogpost-card.astro'
+import BlogPostCard from '@/components/blog-post-card.astro'
 import Disclaimer from '@/components/disclaimer.astro'
 import Base from '@/layouts/base.astro'
 import { supabaseClient } from '@/lib/supabase/client'
@@ -23,9 +23,9 @@ if (error) {
 			{
 				posts?.map((post, index) =>
 					index === 0 ? (
-						<BlogpostCard post={post} class="@2xl:col-span-2 @5xl:col-span-1" />
+						<BlogPostCard post={post} class="@2xl:col-span-2 @5xl:col-span-1" />
 					) : (
-						<BlogpostCard post={post} />
+						<BlogPostCard post={post} />
 					)
 				)
 			}

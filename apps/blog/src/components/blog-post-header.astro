@@ -1,0 +1,32 @@
+---
+import type { BlogPost } from '@/lib/schemas'
+import BlogPostMeta from './blog-post-meta.astro'
+
+type Props = {
+	post: BlogPost
+	mode: 'text' | 'dev'
+}
+const { post, mode } = Astro.props
+const { slug, title } = post
+
+const modeSwitcher = {
+	text: {
+		icon: '</>',
+		link: `/${slug}/raw`
+	},
+	dev: {
+		icon: 'abc',
+		link: `/${slug}`
+	}
+}
+---
+
+<section class="grid gap-1">
+	<section class="flex items-start justify-between gap-2">
+		<h1>{title}</h1>
+		<a class="px-1" href={modeSwitcher[mode].link}>
+			{modeSwitcher[mode].icon}
+		</a>
+	</section>
+	{mode === 'text' && <BlogPostMeta post={post} />}
+</section>

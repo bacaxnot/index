@@ -1,0 +1,18 @@
+---
+import { dateFormatter } from '@/lib/helpers'
+import UsernameTag from './username-tag.astro'
+import type { BlogPost } from '@/lib/schemas'
+
+interface Props {
+	post: BlogPost
+}
+const { post } = Astro.props
+
+const { created_at, user } = post
+const username = user?.username || 'anonimo'
+---
+
+<section class="flex justify-between gap-2 text-sm">
+	<span>{dateFormatter(created_at)}</span>
+	<UsernameTag username={username} />
+</section>

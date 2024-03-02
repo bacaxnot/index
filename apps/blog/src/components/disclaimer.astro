@@ -1,4 +1,11 @@
-<span class="text-[0.7rem]">
+---
+import type { HTMLAttributes } from 'astro/types'
+type Props = HTMLAttributes<'span'>
+
+const { class: className, ...props } = Astro.props
+---
+
+<span class:list={['text-[0.7rem]', className]} {...props}>
 	<strong class="text-yellow-300 underline">{'disclaimer'}</strong>
 	{' : '}
 	<slot />

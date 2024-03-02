@@ -1,0 +1,35 @@
+---
+import { Image } from 'astro:assets'
+import type { BlogPost } from '@/lib/schemas'
+import Disclaimer from './disclaimer.astro'
+
+type Props = {
+	post: BlogPost
+}
+const { post } = Astro.props
+const { title, image_url, audio_url, content } = post
+---
+
+<div class="grid gap-12">
+	<section class="grid justify-center gap-2 @container">
+		<div class="h-60 overflow-hidden @md:h-[32rem]">
+			<Image
+				src={image_url}
+				alt={`imagen generada con I.A. que describe: ${title}`}
+				class="object-cover"
+				inferSize
+			/>
+		</div>
+		<audio controls src={audio_url} class="w-full max-w-5xl"></audio>
+		<Disclaimer class="max-w-5xl">
+			este audio suena como mi voz, pero no lo es. es un modelo de inteligencia artificial que
+			utilizo como esclavo personal para que lea mis posts. la imagen de arriba también está
+			generada con i.a. automáticamente en función del contenido del post. así que si está rara,
+			culpen a la i.a.
+		</Disclaimer>
+	</section>
+	<section>
+		<pre class="whitespace-pre-wrap break-words">{content}
+    </pre>
+	</section>
+</div>

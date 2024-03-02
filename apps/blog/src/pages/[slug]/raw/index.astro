@@ -1,5 +1,4 @@
 ---
-import BlogPostBody from '@/components/blog-post-body.astro'
 import BlogPostHeader from '@/components/blog-post-header.astro'
 import Base from '@/layouts/base.astro'
 import { supabaseClient } from '@/lib/supabase/client'
@@ -16,9 +15,9 @@ const post = posts.find((post) => post.slug === slug)
 if (post == undefined) return Astro.redirect('/404')
 ---
 
-<Base title={`bacaxnot / ${post.title}`}>
+<Base title={`bacaxnot / ${post.title} / raw`}>
 	<article class="grid gap-12">
-		<BlogPostHeader post={post} mode="text" />
-		<BlogPostBody post={post} />
+		<BlogPostHeader post={post} mode="dev" />
+		<pre class="whitespace-pre-wrap break-all">{JSON.stringify(post, null, 2)}</pre>
 	</article>
 </Base>
