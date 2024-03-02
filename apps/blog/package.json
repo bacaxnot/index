@@ -19,7 +19,8 @@
     "@fontsource-variable/roboto-mono": "^5.0.17",
     "@supabase/ssr": "^0.1.0",
     "@supabase/supabase-js": "^2.39.6",
-    "astro": "^4.4.2"
+    "astro": "^4.4.2",
+    "sharp": "^0.33.2"
   },
   "devDependencies": {
     "@astrojs/check": "^0.5.4",
