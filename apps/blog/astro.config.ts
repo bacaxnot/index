@@ -18,5 +18,7 @@ export default defineConfig({
 		]
 	},
 	integrations: [tailwind()],
-	adapter: vercel()
+	adapter: vercel({
+		imageService: true
+	})
 })
