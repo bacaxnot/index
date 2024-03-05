@@ -18,8 +18,8 @@ This Turborepo includes the following packages/apps:
 
 - `docs`: a [Next.js](https://nextjs.org/) app
 - `web`: another [Next.js](https://nextjs.org/) app
-- `@bacaxnot/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@bacaxnot/config`: `eslint` and `typescript` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
+- `@bxn/ui`: a stub React component library shared by both `web` and `docs` applications
+- `@bxn/config`: `eslint` and `typescript` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
 
 Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 

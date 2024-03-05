@@ -1,5 +1,5 @@
 {
-  "name": "@bacaxnot/ui",
+  "name": "@bxn/ui",
   "version": "0.0.0",
   "private": true,
   "exports": {
@@ -12,8 +12,8 @@
     "generate:component": "turbo gen react-component"
   },
   "devDependencies": {
-    "@bacaxnot/tsconfig": "workspace:*",
-    "@bacaxnot/eslint-config": "workspace:*",
+    "@bxn/tsconfig": "workspace:*",
+    "@bxn/eslint-config": "workspace:*",
     "@turbo/gen": "^1.11.3",
     "@types/node": "^20.10.6",
     "@types/eslint": "^8.56.1",

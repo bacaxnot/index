@@ -1,5 +1,5 @@
 {
-  "extends": "@bacaxnot/tsconfig/react-library",
+  "extends": "@bxn/tsconfig/react-library",
   "compilerOptions": {
     "outDir": "dist"
   },

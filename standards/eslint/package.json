@@ -1,5 +1,5 @@
 {
-  "name": "@bacaxnot/eslint-config",
+  "name": "@bxn/eslint-config",
   "version": "1.0.0",
   "description": "Shared configuration for ESLint",
   "private": true,

@@ -8,8 +8,8 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
-    "@bacaxnot/tsconfig": "workspace:*",
-    "@bacaxnot/eslint-config": "workspace:*",
+    "@bxn/tsconfig": "workspace:*",
+    "@bxn/eslint-config": "workspace:*",
     "prettier": "^3.1.1",
     "turbo": "latest"
   },

@@ -1,4 +1,4 @@
-import { cn } from '@bacaxnot/helpers/tailwind'
+import { cn } from '@bxn/helpers/tailwind'
 import { useEffect, useRef, useState } from 'react'
 
 export function Typewriter({ entries, className }: { entries: string[]; className?: string }) {
