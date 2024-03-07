@@ -1,0 +1,27 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1709775642097,
+      "tag": "0000_thick_lily_hollister",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1709777150357,
+      "tag": "0001_right_hawkeye",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1709779621037,
+      "tag": "0002_late_white_queen",
+      "breakpoints": true
+    }
+  ]
+}
