@@ -1,6 +1,7 @@
 ---
+import '@/styles/globals.css'
 import Base from "@/layouts/base.astro";
-
+import {Console} from '@/components/console.tsx';
 
 ---
 
@@ -14,7 +15,9 @@ import Base from "@/layouts/base.astro";
 	</head>
 	<body>
 		<Base title="bacaxnot/admin">
-			clear
+			<main>
+				<Console client:load/>
+			</main>
 		</Base>
 	</body>
 </html>

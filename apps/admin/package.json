@@ -14,14 +14,20 @@
     "@astrojs/react": "^3.0.10",
     "@astrojs/tailwind": "^5.1.0",
     "@fontsource-variable/roboto-mono": "^5.0.17",
+    "@radix-ui/react-scroll-area": "^1.0.5",
     "astro": "^4.4.15",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.0.0",
+    "lucide-react": "^0.354.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "tailwind-merge": "^2.2.1",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@tailwindcss/container-queries": "^0.1.1",
     "@types/react": "^18.2.64",
     "@types/react-dom": "^18.2.21",
-    "@tailwindcss/container-queries": "^0.1.1",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.4.2"
   }
