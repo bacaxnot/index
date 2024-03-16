@@ -9,7 +9,7 @@ export function Console() {
   const { history, input } = useTerminal({ terminal: bxnsh });
 
   return (
-    <section className="size-full text-sm flex flex-col">
+    <section className="size-full text-sm standalone:text-base flex flex-col">
       <ScrollArea className="grow">
         <ul className="grid gap-2">
           {history.map((entry, index) => (

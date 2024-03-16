@@ -1,32 +1,50 @@
 ---
-import '@fontsource-variable/roboto-mono'
+import "@fontsource-variable/roboto-mono";
 
 interface Props {
-	title: string
+  title: string;
 }
-const { title } = Astro.props
+const { title } = Astro.props;
 
 const styles =
-	'min-h-[100dvh] bg-black font-mono text-white [color-scheme:dark]'
+  "min-h-[100dvh] bg-black font-mono text-white [color-scheme:dark] standalone:pb-4";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/png" sizes="32x32" href="/icon/favicon-32x32.png?v=1" />
-		<link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png?v=1" />
-		<link rel="shortcut icon" href="/icon/favicon.ico?v=1" />
-		<link rel="apple-touch-icon" sizes="180x180" href="/icon/apple-touch-icon.png?v=1" />
-		<meta name="apple-mobile-web-app-title" content="bacaxnot" />
-		<meta name="application-name" content="bacaxnot" />
-		<meta name="msapplication-TileColor" content="#da532c" />
-		<meta name="theme-color" content="#000000" />
-		<link rel="mask-icon" href="/icon/safari-pinned-tab.svg?v=1" color="#000000" />
-		<link rel="manifest" href="/site.webmanifest?v=1" />
-		<title>{title}</title>
-	</head>
-	<body class={styles}>
-			<slot />
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/icon/favicon-32x32.png?v=1"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/icon/favicon-16x16.png?v=1"
+    />
+    <link rel="shortcut icon" href="/icon/favicon.ico?v=1" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/icon/apple-touch-icon.png?v=1"
+    />
+    <meta name="apple-mobile-web-app-title" content="bacaxnot" />
+    <meta name="application-name" content="bacaxnot" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#000000" />
+    <link
+      rel="mask-icon"
+      href="/icon/safari-pinned-tab.svg?v=1"
+      color="#000000"
+    />
+    <link rel="manifest" href="/site.webmanifest?v=1" />
+    <title>{title}</title>
+  </head>
+  <body class={styles}>
+    <slot />
+  </body>
 </html>
