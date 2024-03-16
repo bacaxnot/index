@@ -43,7 +43,7 @@ function ConsoleEntry(props: ITerminalHistory[0]) {
           <span>@bacaxnot</span>
           <span>{formatDuration(props.duration, ["(", ")"])}</span>
         </h3>
-        <p className={cn({ "text-red-400": error })}>{props.input}</p>
+        <p className={cn({ "text-red-400 text-sm": error })}>{props.input}</p>
       </section>
       <Markdown className="prose prose-sm prose-invert">
         {props.output}
