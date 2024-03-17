@@ -49,19 +49,28 @@ export class Terminal implements ITerminal {
     command = pkg.commands[bin];
 
     if (!command) return this.handleCommandNotFound(bin, input);
-    return this.handleRunCommand(command, input);
+    return this.handleRunCommand(command, input, pkg);
   }
 
   protected addToHistory(entry: ITerminalHistory[0]) {
     this.history.push(entry);
   }
 
-  protected async handleRunCommand(command: ICommand, input: string) {
+  protected async handleRunCommand(
+    command: ICommand,
+    input: string,
+    pkg?: IPackage,
+  ) {
     const start = Date.now();
     try {
       const [_, ...rest] = input.split(" ");
       const { args, options } = this.parseArgs(rest);
-      const res = await command.run({ args, options, terminal: this });
+      const res = await command.run({
+        args,
+        options,
+        terminal: this,
+        pkg,
+      });
 
       const { saveToHistory } = command.config;
       if (!saveToHistory) return;

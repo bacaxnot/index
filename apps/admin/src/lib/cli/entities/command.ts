@@ -1,5 +1,6 @@
 import type { ChangeReturnType } from "@/lib/types.helpers";
 import type { ITerminal } from "./terminal";
+import type { IPackage } from "./package";
 
 export type ICommandOption = {
   description: string;
@@ -16,6 +17,7 @@ export type ICommandAction = (input: {
   args: string[];
   options: Record<string, string>;
   terminal: ITerminal;
+  pkg?: IPackage;
 }) => Promise<string>;
 
 export type ICommandConfig = {
@@ -62,6 +64,7 @@ export class Command implements ICommand {
     args: string[];
     options: Record<string, string>;
     terminal: ITerminal;
+    pkg?: IPackage;
   }) {
     const start = Date.now();
     const output = await this.action(input);
