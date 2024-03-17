@@ -1,0 +1,14 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import Base from "./base.astro";
+type Props = HTMLAttributes<"main"> & {
+  title: string;
+};
+const { title, class: className } = Astro.props;
+---
+
+<Base title={title}>
+  <main class:list={["w-full standalone:pb-4", className]}>
+    <slot />
+  </main>
+</Base>

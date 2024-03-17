@@ -1,35 +1,8 @@
 ---
-import "@/styles/globals.css";
-import Base from "@/layouts/base.astro";
 import { Console } from "@/components/console.tsx";
+import Page from "@/layouts/page.astro";
 ---
 
-<script is:inline>
-  const getThemePreference = () => {
-    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
-      return localStorage.getItem("theme");
-    }
-    return window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light";
-  };
-  const isDark = getThemePreference() === "dark";
-  document.documentElement.classList[isDark ? "add" : "remove"]("dark");
-
-  if (typeof localStorage !== "undefined") {
-    const observer = new MutationObserver(() => {
-      const isDark = document.documentElement.classList.contains("dark");
-      localStorage.setItem("theme", isDark ? "dark" : "light");
-    });
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ["class"],
-    });
-  }
-</script>
-
-<Base title="bacaxnot/admin">
-  <main class="w-full h-[100dvh] overflow-hidden standalone:pb-4">
-    <Console client:load />
-  </main>
-</Base>
+<Page title="bacaxnot/admin" class="h-[100dvh] overflow-hidden">
+  <Console client:load />
+</Page>
