@@ -52,7 +52,7 @@ export default function RootLayout({
       {/* icons */}
       <body
         className={cn(
-          "min-h-[100dvh] standalone:touch-none",
+          "min-h-[100dvh] standalone:touch-none standalone:px-2",
           robotoMono.className
         )}
       >
