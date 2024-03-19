@@ -5,7 +5,7 @@ import { ScrollArea } from "./ui/scroll-area";
 import { bxnsh } from "@/lib/cli/instances/terminals/bxnsh";
 import type { ITerminalHistory } from "@/lib/cli/entities/terminal";
 import { cn } from "@/lib/utils";
-import { Markdown } from "./ui/markdown-renderer";
+import { MarkdownRenderer } from "./ui/markdown-renderer";
 
 export function Console() {
   const { history, input } = useTerminal({ terminal: bxnsh });
@@ -49,9 +49,9 @@ function ConsoleEntry(props: ITerminalHistory[0]) {
           {props.input}
         </p>
       </section>
-      <Markdown className="prose prose-sm prose-invert">
+      <MarkdownRenderer className="prose prose-sm prose-invert">
         {props.output}
-      </Markdown>
+      </MarkdownRenderer>
     </p>
   );
 }
