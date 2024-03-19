@@ -5,7 +5,7 @@ import { ScrollArea } from "./ui/scroll-area";
 import { bxnsh } from "@/lib/cli/instances/terminals/bxnsh";
 import type { ITerminalHistory } from "@/lib/cli/entities/terminal";
 import { cn } from "@/lib/utils";
-import { Markdown } from "./ui/markdown";
+import { Markdown } from "./ui/markdown-renderer";
 
 export function Console() {
   const { history, input } = useTerminal({ terminal: bxnsh });
