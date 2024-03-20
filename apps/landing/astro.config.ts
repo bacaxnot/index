@@ -1,8 +1,10 @@
 import { defineConfig } from 'astro/config'
 import tailwind from '@astrojs/tailwind'
 import react from '@astrojs/react'
+import aws from 'astro-sst'
 
+// https://astro.build/config
 export default defineConfig({
-	// @ts-ignore
-	integrations: [tailwind(), react()]
+	integrations: [tailwind(), react()],
+	adapter: aws()
 })
