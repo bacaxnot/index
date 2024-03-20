@@ -1,9 +1,12 @@
 {
   "name": "bacaxnot",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "turbo build",
-    "dev": "turbo dev",
+    "dev": "sst dev turbo dev --verbose",
+    "deploy:prod": "sst deploy --stage=prod",
+    "undeploy:prod": "sst remove --stage=prod",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
@@ -16,5 +19,8 @@
   "packageManager": "pnpm@8.9.0",
   "engines": {
     "node": ">=18"
+  },
+  "dependencies": {
+    "sst": "^3.0.1"
   }
 }

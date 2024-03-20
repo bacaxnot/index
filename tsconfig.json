@@ -1,3 +1,6 @@
 {
-  "extends": "@bxn/tsconfig/base"
+  "extends": "@bxn/tsconfig/base",
+  "exclude": [
+    "sst.config.ts"
+  ]
 }
