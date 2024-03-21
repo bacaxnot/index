@@ -2,7 +2,7 @@ import React from "react";
 import { MarkdownRenderer } from "./ui/markdown-renderer";
 import { cn } from "@/lib/utils";
 
-export default function BlogPreview({
+export function BlogPreview({
   className,
   content,
 }: {

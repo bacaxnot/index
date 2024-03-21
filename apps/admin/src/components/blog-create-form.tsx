@@ -1,73 +1,54 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
-import { useToast } from "@/components/ui/use-toast";
-import { Pencil, View } from "lucide-react";
-import BlogPreview from "./blog-preview";
+import { BlogPreview } from "./blog-preview";
 import { TextareaAutosize } from "./ui/textarea-autosize";
-import { generatePost } from "@/lib/actions/generate-post";
+import { createPost } from "@/lib/actions/generate-post";
+import { ButtonSubmit } from "./button-submit";
 
 export function BlogCreateForm() {
-  const { toast } = useToast();
   const [content, setContent] = useState("");
-  const [preview, setPreview] = useState(false);
-
-  const togglePreview = () => setPreview((prev) => !prev);
 
   return (
-    <form action={generatePost} className="grid gap-6">
+    <form className="grid gap-6">
       <section className="grid w-full max-w-sm items-center gap-1.5">
         <Label htmlFor="title">title</Label>
         <Input
-          type="title"
           id="title"
+          name="title"
           placeholder="the weirdness of existence v1"
         />
       </section>
       <section className="grid w-full max-w-sm items-center gap-1.5">
-        <Label htmlFor="title">slug</Label>
+        <Label htmlFor="slug">slug</Label>
         <Input
-          type="title"
-          id="title"
+          id="slug"
+          name="slug"
           placeholder="the-weirdness-of-existence-v1"
         />
       </section>
       <section className="grid gap-1.5 w-full">
         <Label htmlFor="content">content</Label>
-        <section>
-          <Button
-            variant={"ghost"}
-            size={"icon"}
-            type="button"
-            onClick={togglePreview}
-          >
-            {preview ? <Pencil /> : <View />}
-          </Button>
-        </section>
-        {preview ? (
-          <BlogPreview content={content} />
-        ) : (
-          <TextareaAutosize
-            placeholder="write crazy ideas here"
-            id="content"
-            value={content}
-            onChange={(e) => setContent(e.target.value)}
-          />
-        )}
+        <TextareaAutosize
+          placeholder="write crazy ideas here"
+          id="content"
+          name="content"
+          value={content}
+          onChange={(e) => setContent(e.target.value)}
+        />
         <p className="text-sm text-muted-foreground">
           you can use markdwon to format your content.
         </p>
       </section>
-      <Button
-        className="max-w-max"
-        type="submit"
-        onClick={() => toast({ title: "test" })}
-      >
-        create
-      </Button>
+      <section className="grid gap-1.5 w-full">
+        <Label>preview</Label>
+        <BlogPreview content={content} />
+      </section>
+      <section className="flex">
+        <ButtonSubmit action={createPost}>create</ButtonSubmit>
+      </section>
     </form>
   );
 }
