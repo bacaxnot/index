@@ -1,7 +1,0 @@
-name: storage
-runtime: nodejs
-description: storage package for bacaxnot ecosystem
-config:
-  pulumi:tags:
-    value:
-      pulumi:template: aws-typescript
