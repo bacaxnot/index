@@ -1,0 +1,19 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug SST Live",
+      "type": "node",
+      "request": "launch",
+      "runtimeArgs": [
+        "dev",
+        "turbo dev"
+      ],
+      "console": "integratedTerminal",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "runtimeExecutable": "/opt/homebrew/bin/sst"
+    }
+  ]
+}

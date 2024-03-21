@@ -1,9 +1,6 @@
 {
   "extends": "@bxn/tsconfig/base",
-  "exclude": [
-    "sst.config.ts"
-  ],
   "compilerOptions": {
     "sourceMap": true
-  }
+  },
 }

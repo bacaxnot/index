@@ -1,0 +1,11 @@
+{
+  "name": "@bxn/functions",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "devDependencies": {
+    "@bxn/tsconfig": "workspace:*",
+    "@types/node": "^20.10.6",
+    "typescript": "^5.3.3"
+  }
+}

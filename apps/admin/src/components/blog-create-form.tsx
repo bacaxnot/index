@@ -4,11 +4,11 @@ import { useState } from "react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
-import { Textarea } from "./ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
 import { Pencil, View } from "lucide-react";
 import BlogPreview from "./blog-preview";
 import { TextareaAutosize } from "./ui/textarea-autosize";
+import { generatePost } from "@/lib/actions/generate-post";
 
 export function BlogCreateForm() {
   const { toast } = useToast();
@@ -18,7 +18,7 @@ export function BlogCreateForm() {
   const togglePreview = () => setPreview((prev) => !prev);
 
   return (
-    <form action="/" className="grid gap-6">
+    <form action={generatePost} className="grid gap-6">
       <section className="grid w-full max-w-sm items-center gap-1.5">
         <Label htmlFor="title">title</Label>
         <Input
@@ -63,7 +63,7 @@ export function BlogCreateForm() {
       </section>
       <Button
         className="max-w-max"
-        type="button"
+        type="submit"
         onClick={() => toast({ title: "test" })}
       >
         create
