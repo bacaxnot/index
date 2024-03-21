@@ -1,16 +1,13 @@
-export async function handler(event: any) {
-  // const { title, content } = event.body;
-  // const post = await createPost(title, content);
-  // return {
-  //   statusCode: 200,
-  //   body: JSON.stringify(post),
-  // };
-  const eventObject = event;
-  console.log(eventObject);
+type Props = {
+  title: string;
+  slug?: string;
+  content: string;
+};
+
+export async function handler({ title, slug, content }: Props) {
+  console.log(title, content, slug);
+
   return {
     statusCode: 200,
-    body: JSON.stringify({
-      message: "Hello from Lambda!",
-    }),
   };
 }
