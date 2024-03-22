@@ -2,13 +2,23 @@
 import BlogPostBody from '@/components/blog-post-body.astro'
 import BlogPostHeader from '@/components/blog-post-header.astro'
 import Base from '@/layouts/base.astro'
-import { supabaseClient } from '@/lib/supabase/client'
 
 export const prerender = false
 
-const supabase = supabaseClient({ env: 'server', cookies: Astro.cookies })
-const { data: posts } = await supabase.from('posts').select('*, user:users(*)')
-
+const posts  = [
+	{
+		"title": "Hello World",
+		"slug": "hello-world",
+		"date": "2021-10-10",
+		"content": "Hello, world!"
+	},
+	{
+		"title": "Goodbye World",
+		"slug": "goodbye-world",
+		"date": "2021-10-11",
+		"content": "Goodbye, world!"
+	}
+]
 if (posts == null) return Astro.redirect('/404')
 const { slug } = Astro.params
 

@@ -8,16 +8,13 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "lint": "prettier --write  \"**/*.{js,jsx,ts,tsx,md,mdx,astro}\"",
-    "gen:dbtypes": "npx supabase gen types typescript --project-id ehgwwzsrzlymozphrlyk > ./src/lib/supabase/types.d.ts"
+    "lint": "prettier --write  \"**/*.{js,jsx,ts,tsx,md,mdx,astro}\""
   },
   "dependencies": {
     "@astrojs/mdx": "^2.1.1",
     "@astrojs/rss": "^4.0.5",
     "@astrojs/sitemap": "^3.0.5",
     "@fontsource-variable/roboto-mono": "^5.0.17",
-    "@supabase/ssr": "^0.1.0",
-    "@supabase/supabase-js": "^2.39.6",
     "astro": "^4.4.2",
     "astro-sst": "^2.41.2",
     "sharp": "^0.33.2"
@@ -29,7 +26,6 @@
     "prettier": "^3.1.1",
     "prettier-plugin-astro": "^0.13.0",
     "prettier-plugin-tailwindcss": "^0.5.11",
-    "supabase": "^1.145.4",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.3.3"
   }

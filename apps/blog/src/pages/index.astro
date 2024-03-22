@@ -2,14 +2,8 @@
 import BlogPostCard from '@/components/blog-post-card.astro'
 import Disclaimer from '@/components/disclaimer.astro'
 import Base from '@/layouts/base.astro'
-import { supabaseClient } from '@/lib/supabase/client'
 
-const supabase = supabaseClient({ env: 'server', cookies: Astro.cookies })
-const { data: posts, error } = await supabase.from('posts').select('*, user:users(*)')
-
-if (error) {
-	console.error(error)
-}
+const posts = []
 ---
 
 <Base title={'blog/bacaxnot'}>
