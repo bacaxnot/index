@@ -22,15 +22,17 @@ export default $config({
       },
     });
     const OpenAIApiKey = new sst.Secret("OpenAIApiKey");
+    const DBConnectionString = new sst.Secret("SupabaseTransactionString");
 
     const lambda = new sst.aws.Function("CreatePost", {
-      handler: "packages/functions/src/blog/create.handler",
+      handler: "packages/functions/src/blog/create.main",
       timeout: "3 minutes",
       memory: "1024 MB",
       url: true,
       link: [bucket],
       environment: {
         OPENAI_API_KEY: OpenAIApiKey.value,
+        DB_SERVERLESS_URL: DBConnectionString.value,
       },
     });
 
@@ -38,6 +40,9 @@ export default $config({
       path: "apps/admin",
       domain: prodOnly(domains.admin),
       link: [bucket, lambda],
+      environment: {
+        DB_SERVERLESS_URL: DBConnectionString.value,
+      },
     });
 
     new sst.aws.Astro("Landing", {
