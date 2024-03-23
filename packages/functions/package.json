@@ -1,8 +1,10 @@
 {
   "name": "@bxn/functions",
-  "type": "module",
   "version": "0.0.0",
   "private": true,
+  "dependencies": {
+    "@bxn/database": "workspace:*"
+  },
   "devDependencies": {
     "@bxn/tsconfig": "workspace:*",
     "@types/node": "^20.10.6",
