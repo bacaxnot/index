@@ -1,7 +1,6 @@
 {
   "name": "bacaxnot",
   "private": true,
-  "type": "module",
   "scripts": {
     "build": "turbo build",
     "dev": "sst dev turbo dev --verbose",
