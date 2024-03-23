@@ -2,10 +2,8 @@
   "name": "@bxn/database",
   "version": "0.0.0",
   "private": true,
-  "type": "module",
-  "main": "src/index.ts",
   "exports": {
-    "./*": "./src/*"
+    "./*": "./src/*.ts"
   },
   "scripts": {
     "db:pull": "drizzle-kit introspect:pg",

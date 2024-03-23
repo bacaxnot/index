@@ -1,12 +1,6 @@
 {
   "extends": "@bxn/tsconfig/base",
-  "exclude": [
-    "node_modules"
-  ],
   "compilerOptions": {
-    "target": "ES2020",
-    "module": "esnext",
-    "moduleResolution": "node",
     "baseUrl": ".",
     "paths": {
       "@/*": [
