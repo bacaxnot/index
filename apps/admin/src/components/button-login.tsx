@@ -4,9 +4,16 @@ import useAuth from "@/lib/hooks/use-auth";
 import { type AllHTMLProps } from "@/lib/types.helpers";
 import { cn } from "@/lib/utils";
 
-type Props = AllHTMLProps<"button">;
+type Props = AllHTMLProps<"button"> & {
+  next?: string;
+};
 
-export default function ButtonLogin({ className, onClick, ...props }: Props) {
+export default function ButtonLogin({
+  className,
+  onClick,
+  next,
+  ...props
+}: Props) {
   const { signIn } = useAuth();
 
   return (
@@ -16,7 +23,7 @@ export default function ButtonLogin({ className, onClick, ...props }: Props) {
         className
       )}
       type="button"
-      onClick={signIn}
+      onClick={() => signIn({ next: next ?? window.location.pathname })}
       {...props}
     >
       unlock [?]

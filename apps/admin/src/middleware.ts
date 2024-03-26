@@ -4,7 +4,6 @@ import { authClient, type CookieOptions } from "@bxn/auth/server/client";
 import type { NextRequest } from "next/server";
 
 export async function middleware(req: NextRequest) {
-  console.log("hitting middleware");
   let res = NextResponse.next({
     headers: req.headers,
   });
@@ -53,7 +52,9 @@ export async function middleware(req: NextRequest) {
   } = await auth.getSession();
 
   if (!session)
-    return NextResponse.redirect(new URL("/unlock", req.url), { status: 302 });
+    return NextResponse.redirect(new URL(`/unlock`, req.nextUrl.origin), {
+      status: 302,
+    });
 
   return res;
 }
