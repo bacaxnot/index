@@ -23,6 +23,8 @@ export default $config({
     });
     const OpenAIApiKey = new sst.Secret("OpenAIApiKey");
     const DBConnectionString = new sst.Secret("SupabaseTransactionString");
+    const SupabaseURL = new sst.Secret("SupabaseURL");
+    const SupabaseAnonKey = new sst.Secret("SupabaseAnonKey");
 
     const lambda = new sst.aws.Function("CreatePost", {
       handler: "packages/functions/src/blog/create.main",
@@ -42,6 +44,8 @@ export default $config({
       link: [bucket, lambda],
       environment: {
         DB_SERVERLESS_URL: DBConnectionString.value,
+        NEXT_PUBLIC_SUPABASE_URL: SupabaseURL.value,
+        NEXT_PUBLIC_SUPABASE_ANON_KEY: SupabaseAnonKey.value,
       },
     });
 
