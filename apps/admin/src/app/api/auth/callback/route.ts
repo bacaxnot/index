@@ -27,6 +27,6 @@ export async function GET(request: NextRequest) {
     return NextResponse.redirect(
       `${origin}/unlock?error=error-exchanging-code`
     );
-  console.log(`returning to ${origin}${next}`);
+
   return NextResponse.redirect(`${origin}${next}`);
 }
